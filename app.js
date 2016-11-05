@@ -26,10 +26,10 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('SELECT * FROM activities', function(err, rows, fields) {
-  if (err) throw err;
-  console.log(rows[0].activityId);
-});
+// connection.query('SELECT * FROM activities', function(err, rows, fields) {
+//   if (err) throw err;
+//   console.log(rows[0].activityId);
+// });
 
 connection.end();
 
