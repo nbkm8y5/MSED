@@ -7,15 +7,18 @@ var bodyParser = require('body-parser');
 
 var mysql = require('mysql');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./app/routes/index');
+var adminRoutes = require('./app/routes/admin');
+var apiRoutes = require('./app/routes/api');
+var users = require('./app/routes/users');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
+// Do we really need this here?
 var connection = mysql.createConnection({
   host     : 'wp-msed-db.c9wr0yzscnts.us-east-1.rds.amazonaws.com',
   user     : 'msed_db',
@@ -33,6 +36,7 @@ connection.connect();
 
 connection.end();
 
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -42,6 +46,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
+
+// all these below run an app.use for authentication
+app.use('/admin', adminRoutes);
+app.use('/api', apiRoutes);
+app.use('/dashboard', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
