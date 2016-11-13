@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title><%=title %></title>
-
-    <!-- Bootstrap -->
-    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <% include templates/head.ejs %>
 </head>
 <body>
+<header class="container">
+    <% include templates/navigation.ejs %>
+</header>
 <div class="container">
-    <div class="col-md-offset-4 col-md-4">
-        <h1>MSED Admin Dashboard</h1>
-        <h2>Admin Dashboard</h2>
+    <div class="row">
+        <h1 class="text-center">MSED Admin Dashboard</h1>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Users</h3>
+            <h4>Active Users</h4>
+            <img class="img-responsive" src="/assets/images/graph-placeholder.png">
+            <!--TODO-->
+            <h4>Passive Users</h4>
+            <img class="img-responsive" src="/assets/images/graph-placeholder.png">
+            <!--TODO-->
+        </div>
+        <div class="col-md-4">
+            <h3>Server and System Logs</h3>
+            <h4><% include templates/adminNavigation.ejs %></h4>
+            <img class="img-responsive" src="/assets/images/graph-placeholder.png">
+            <!--TODO-->
+        </div>
+        <div class="col-md-4">
+            <h3>Admin Column 3</h3>
+            <h4>Some other admin data</h4>
+            <img class="img-responsive" src="/assets/images/graph-placeholder.png">
+            <!--TODO-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Admin Column 4</h3>
+            <h4>Some other admin data</h4>
+            <img class="img-responsive" src="/assets/images/graph-placeholder.png">
+            <!--TODO-->
+        </div>
+        <div class="col-md-4">
+            <h3>Admin Column 5</h3>
+            <h4>Some other admin data</h4>
+            <img class="img-responsive" src="/assets/images/graph-placeholder.png">
+        </div>
+        <div class="col-md-4">
+            <h3>Admin Column 6</h3>
+            <h4>Some other admin data</h4>
+            <img class="img-responsive" src="/assets/images/graph-placeholder.png">
+            <!--TODO-->
+        </div>
     </div>
 </div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<!--<script src="js/bootstrap.min.js"></script>-->
+<% include templates/foot.ejs %>
 </body>
 </html>
