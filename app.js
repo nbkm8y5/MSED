@@ -47,10 +47,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-// for adding public folder
-app.use(express.static(__dirname + '/public'));
-
-
 // all these below run an app.use for authentication
 app.use('/admin', adminRoutes);
 app.use('/api', apiRoutes);
