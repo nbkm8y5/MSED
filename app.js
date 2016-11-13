@@ -7,10 +7,10 @@ var bodyParser = require('body-parser');
 
 var mysql = require('mysql');
 
-var routes = require('./app/routes/index');
-var adminRoutes = require('./app/routes/admin');
-var apiRoutes = require('./app/routes/api');
-var users = require('./app/routes/users');
+var routes = require('./routes/index');
+var adminRoutes = require('./routes/admin');
+var apiRoutes = require('./routes/api');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -46,6 +46,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+
+// for adding public folder
+app.use(express.static(__dirname + '/public'));
 
 
 // all these below run an app.use for authentication
