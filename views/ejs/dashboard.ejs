@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%=title %></title>
+    <% include templates %>
+</head>
+<body>
+<header class="container">
+    <% include templates %>
+</header>
+<div class="container">
+    <div class="row">
+        <h1>MSED Dashboard</h1>
+    </div>
+    <div class="row">
+            <h3 class="text-center">Activities</h3>
+        <img class="img-responsive" src="/assets/images/graph-1200.png">
+        <!--TODO-->
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">Steps</h3>
+            <img class="img-responsive" src="/assets/images/graph-600.png">
+            <!--TODO-->
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Distance</h3>
+            <img class="img-responsive" src="/assets/images/graph-600.png">
+            <!--TODO-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">Active Minutes</h3>
+            <img class="img-responsive" src="/assets/images/graph-600.png">
+            <!--TODO-->
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Sleep</h3>
+            <img class="img-responsive" src="/assets/images/graph-600.png">
+            <!--TODO-->
+        </div>
+    </div>
+    <div class="row">
+        <h3 class="text-center">JSON Code</h3>
+        <code>JSON Object: <%- JSON.stringify(activitiesObj) %></code>
+        <!--TODO-->
+    </div>
+</div>
+
+<% include templates %>
+</body>
+</html>
