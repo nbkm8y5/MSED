@@ -4,10 +4,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var basicRoutes = require('./routes/basicRoutes');
+// var mongoose = require('mongoose');
+
 var app = express();
 
 //NPM Module to integrate Handlerbars UI template engine with Express
 var exphbs  = require('express-handlebars');
+
+// mongoose.connect('mongodb://localhost/test');
 //Declaring Express to use Handlerbars template engine with main.handlebars as
 //the default layout
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
