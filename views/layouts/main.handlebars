@@ -7,17 +7,28 @@
     <title>MSED | Multisport Equipment Dashboard</title>
 </head>
 <body>
-    <div class="container">
-        <!--You can modify to different ones-->
-      {{{body}}}
-    </div>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/AJAX/libs/handlebars.js/4.0.0/handlebars.js"></script>
-    <script src="/public/ajax/distance_chart.js" charset="utf-8"></script>
-    <script src="/public/ajax/steps_chart.js" charset="utf-8"></script>
-    <script src="/public/js/fusioncharts.js"></script>
-    <script src="/public/js/fusioncharts.charts.js"></script>
-    <script src="/public/js/fusioncharts.theme.zune.js"></script>
+<header class="container text-center">
+    <ul class="list-inline">
+        <li><a href="/">Home</a></li>
+        {{#if loggedin}}
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+        {{/if}}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+    </ul>
+</header>
+<div class="container">
+    <!--You can modify to different ones-->
+    {{{body}}}
+</div>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/AJAX/libs/handlebars.js/4.0.0/handlebars.js"></script>
+<script src="/public/ajax/distance_chart.js" charset="utf-8"></script>
+<script src="/public/ajax/steps_chart.js" charset="utf-8"></script>
+<script src="/public/js/fusioncharts.js"></script>
+<script src="/public/js/fusioncharts.charts.js"></script>
+<script src="/public/js/fusioncharts.theme.zune.js"></script>
 </body>
 </html>
